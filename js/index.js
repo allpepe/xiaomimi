@@ -137,7 +137,7 @@ Animation.prototype.extend({
 
     //轮播图出口方法
     carousel:function(banner, imgWidth, ul, ulLiArr, ol, spanArr){
-        var timer,key=0,square=0,num=ulLiArr.length,bool=true;
+        var timer,key=0,square=0,num=ulLiArr.length,bool=true,count;
 
         //根据图片的张数，动态创建索引li
         for(var i=0,len=num-1; i<len; i++){
@@ -158,19 +158,33 @@ Animation.prototype.extend({
                 }
                 this.className = "current";
             }
+
+            //鼠标滑出索引li，恢复到原来停留的位置
+            olLiArr[i].onmouseleave = function(){
+                for(var j=0; j<olLiLength; j++){
+                    olLiArr[j].className = "";
+                }
+                //鼠标滑出ol范围时，恢复状态
+                this.parentNode.onmouseleave = function(){
+                    olLiArr[count].className = "current";
+                }
+            }
+
             olLiArr[i].onclick = function(){
                 for(var j=0; j<olLiLength; j++){
                     olLiArr[j].className = "";
                 }
-                // ul.style.transition = "left 0.2s";
                 ul.style.left = -this.index*imgWidth + "px";
                 key = square = this.index;
+                count = this.index; //单击时改变当前索引li 的状态
                 this.className = "current";
             }
         }
 
         //鼠标放上去清除定时器，移开则开启定时器
         banner.onmouseenter = function(){
+            // console.log('索引li为：' + square);
+            count = square; //记录下鼠标滑入时，索引li 的状态
             clearInterval(timer);
         }
         banner.onmouseleave = function(){
