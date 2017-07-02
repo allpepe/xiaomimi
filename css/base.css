@@ -20,7 +20,7 @@ a {
 a:hover {
     color: #fff;
 }
-input {
+input,button {
     border:0;
     outline:none;
 }
