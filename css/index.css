@@ -648,10 +648,10 @@
   text-align: left;
   margin: 43px 0 0 38px;
 }
-.page-main .container .home-main .brick-promo-list .brick-right ul.brick-ul li.last-row-s .figure-tile-bottom a#more:before {
+.page-main .container .home-main .brick-promo-list .brick-right ul.brick-ul li.last-row-s .figure-tile-bottom a.more:before {
   color: #ff6700;
 }
-.page-main .container .home-main .brick-promo-list .brick-right ul.brick-ul li.last-row-s .figure-tile-bottom a#more:before:hover {
+.page-main .container .home-main .brick-promo-list .brick-right ul.brick-ul li.last-row-s .figure-tile-bottom a.more:before:hover {
   color: #ff6700;
 }
 .page-main .container .home-main .brick-promo-list .brick-right ul.brick-ul li.last-row-s .figure-tile-bottom h3.title-s {

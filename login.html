@@ -53,7 +53,13 @@
     </p>
     <p>本人纯属练习,要是有侵犯版权之处,请联系我删掉: QQ2458767808</p>
 </div>
+
+<script src="node_modules/scriptjs/dist/script.min.js"></script>
+<script>
+    //异步加载包
+    $script('node_modules/jquery/dist/jquery.min.js', function(){
+        $script('js/login.js');
+    });
+</script>
 </body>
 </html>
-<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="js/login.js"></script>
